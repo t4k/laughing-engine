@@ -1,0 +1,34 @@
+name: Preservation Operations
+description: Initiate preservation workflow.
+title: "Validating Records & Files for Preservation"
+labels: ["preservation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > [!IMPORTANT]
+        > The metadata records and digital files must exist prior to beginning this workflow.
+        > Please see the [documentation](https://caltechlibrary.atlassian.net/l/cp/YmkEtFho) for more information.
+  - type: dropdown
+    attributes:
+      label: Storage Location
+      description: Select the network volume that contains the source files.
+      options:
+        - ArchivesIntake
+        - ArchivesWorkspace
+        - DataStagingArea
+        - Media
+      default: 0
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Notes
+  - type: checkboxes
+    id: review
+    attributes:
+      label: Manual Review Required
+      description: Manual approval of validation results will be required to execute the workflow.
+      options:
+        - label: I will monitor this issue and respond to the validation results.
+          required: true
